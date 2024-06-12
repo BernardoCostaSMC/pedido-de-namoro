@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pedido de Namoro</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        /* Adicione um estilo para os botões */
+        .btn {
+            margin-right: 10px; /* Espaço entre os botões */
+        }
+
+        /* Estilo para o botão Não! mover */
+        .btn-no {
+            position: absolute;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Pedido de Namoro</h1>
+        <div class="message">
+            <p>Carta de Hades a Perséfone</p>
+            <p>Eu amo todas as estações, mas amo você de todas as formas. Você é minha primavera, meu verão, meu outono, meu inverno. Você é a terra sob meus pés e o céu acima de mim. Você trouxe luz para os lugares mais sombrios da minha vida. Com você, cada momento é como o nascer do sol depois de uma longa noite escura. Eu nunca soube que poderia sentir tanto, até que você entrou em minha vida. Te amo além das palavras, além do tempo, além da eternidade.</p>
+            <p>Quer namorar comigo?</p>
+        </div>
+        <button class="btn" onclick="respostaSim()">Sim!</button>
+        <!-- Adicionei uma classe para identificar o botão Não! -->
+        <button class="btn btn-no" onclick="respostaNao()">Não!</button>
+    </div>
+
+    <script>
+        function respostaSim() {
+            alert("Que bom! Estou muito feliz em ouvir isso!");
+        }
+
+        function respostaNao() {
+            // Seleciona o botão Não!
+            var btnNao = document.querySelector('.btn-no');
+            // Gera uma posição aleatória
+            var randomX = Math.random() * (window.innerWidth - btnNao.clientWidth);
+            var randomY = Math.random() * (window.innerHeight - btnNao.clientHeight);
+            // Define a nova posição
+            btnNao.style.left = randomX + 'px';
+            btnNao.style.top = randomY + 'px';
+        }
+    </script>
+</body>
+</html>
